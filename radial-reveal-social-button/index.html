@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="icons/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Radial Reveal Social Button</title>
+    <!-- https://github.com/frontendcharm/Mini-Projects/tree/main/BUTTONS/Radial%20Reveal%20Social%20Button -->
+</head>
+<body>
+    <div class="buttons">
+        <button class="buttons__toggle"><i class="fa fa-share-alt"></i></button>
+
+        <div class="buttons__ctas">
+            <a class="buttons__cta" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a class="buttons__cta" href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a class="buttons__cta" href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a class="buttons__cta" href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a class="buttons__cta" href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a class="buttons__cta" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <script>
+        const buttonsComponent = document.querySelector(".buttons");
+        const buttonsToggle = document.querySelector(".buttons__toggle");
+
+        buttonsToggle.addEventListener("click", toggleButtons);
+
+        function toggleButtons() {
+            buttonsToggle.classList.toggle("buttons__toggle--active");
+            buttonsComponent.classList.toggle("buttons--active");
+            document.activeElement.blur();
+        }
+    </script>
+</body>
+</html>
+  
