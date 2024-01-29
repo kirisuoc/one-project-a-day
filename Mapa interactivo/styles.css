@@ -1,0 +1,19 @@
+body {
+    background-color: #7b68ee;
+    display: flex;
+    place-content: center;
+}
+
+.container {
+    width: 100%;
+}
+
+.container path {
+    fill: #f9b452;
+    stroke: #8b4513;
+    stroke-width: 1px;
+}
+
+.container :hover{
+    fill: #800000;
+}
