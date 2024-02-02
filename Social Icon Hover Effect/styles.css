@@ -1,0 +1,90 @@
+body {
+    height: 100vh;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 35rem;
+
+}
+
+.wrapper ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+
+}
+
+.item a {
+    width: 5rem;
+    height: 5rem;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    overflow: hidden;
+    border: 3px solid #fff;
+    position: relative;
+}
+
+.item a::before {
+    content: "";
+    position: absolute;
+    background: var(--bg);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    scale: 1 0;
+    transform-origin: bottom;
+    transition: scale 0.5s ease;
+}
+
+.item:hover a::before {
+    scale: 1 1;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #000;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.item a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+.item a:hover .fa-snapchat {
+    color: #000;
+}
+
+.item:nth-child(1) {
+    --bg: linear-gradient(to bottom right, #f9ce34, #ee2a7b, #6228d7);
+}
+
+.item:nth-child(2) {
+    --bg: #0777e9;
+}
+
+.item:nth-child(3) {
+    --bg: #fffc00;
+}
+
+.item:nth-child(4) {
+    --bg: #5865f2;
+}
+
+.item:nth-child(5) {
+    --bg: #000;
+}
+
+
