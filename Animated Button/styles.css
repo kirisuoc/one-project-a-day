@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter',sans-serif;
+    background-color: #1e293b;
+}
+
+button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 4;
+}
+
+button .big {
+    z-index: 3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: -.5rem;
+}
+
+button .small {
+    position: absolute;
+    bottom: 0.4rem;
+    left: 3.5rem;
+    z-index: 3;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+button .icon {
+    height: 100%;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: .5rem;
+    /*background-color: chartreuse;*/
+    z-index: 3;
+    color: black;
+}
+
+button .overlay {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: chartreuse;
+    z-index: 1;
+    clip-path: circle(12% at 80% 49%);
+    transition: all .5s ease-in;
+}
+
+button:hover .overlay {
+    clip-path: circle(120% at 80% 49%);
+
+}
+
+/*clip-path: circle(12% at 80% 49%);*/
