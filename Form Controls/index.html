@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/851b82981d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script>
+    
+    <title>Form Controls</title>
+    <!-- https://www.instagram.com/p/C11gAkyttQO/?img_index=2 -->
+</head>
+<body>
+    <div class="discussion">
+        <div class="discussion__header">
+            <div class="authed-user"></div>
+            <form id="newcomment__form">
+                <textarea
+                    tabindex="1" cols="150" rows="4"
+                    minlength="5" required placeholder="Write a comment"
+                ></textarea>
+                <div class="newcomment__toolbar">
+                    <button
+                        id="reset-button" class="button--secondary"
+                        tabindex="3" type="button"
+                    >
+                        Reset
+                        <button
+                            id="confirm-button" class="button--primary"
+                            tabindex="2" type="submit"
+                        >
+                            Comment
+                        </button>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+        <div class="discussion__comments"><!-- JS generated --></div>
+
+    </div>
+
+
+
+    <script src="main.js"></script>
+
+</body>
+</html>
+  
