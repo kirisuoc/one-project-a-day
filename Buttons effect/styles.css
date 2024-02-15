@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+html {
+    padding-top: 50px;
+    font-family: "Open Sans", Helvetica, arial, sans-serif;
+    text-align: center;
+    background-color: honeydew;
+}
+
+body {
+    background-color: var(--background);
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    padding: 24px;
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+}
+
+i, em, b, strong, span {
+    transition: none;
+}
+
+*:before,
+*:after {
+    z-index: -1;
+}
+
+h1, h4 {
+    font-family: "Raleway", "Open Sans", sans-serif;
+    margin: 0;
+    line-height: 1;
+}
+
+a {
+    text-decoration: none;
+    line-height: 80px;
+    color: black;
+}
+
+.centerer {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 600px) {
+    .wrap {
+        width: 50%;
+        float: left;
+    }
+}
+
+[class^=btn-] {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 80px;
+    max-width: 250px;
+    margin: 1rem auto;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+}
+
+/* BOTÓN 1 */
+.btn-0 {
+    color: #66978f;
+}
+
+.btn-0:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #2d504a;
+    transform: translateX(-100%);
+}
+
+.btn-0:hover {
+    color: #d2e1de;
+}
+
+.btn-0:hover:before {
+    transform: translateX(0);
+}
+
+/* BOTÓN 2 */
+.btn-1 {
+    color: #c4c2c3;
+}
+
+.btn-1:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -50px;
+    bottom: 0;
+    left: 0;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid #6f6e6e;
+    transform: translateX(-100%);
+}
+
+.btn-1:hover:before {
+    transform: translateX(0);
+}
+
+.btn-1-2 {
+    color: #547f37;
+}
+
+.btn-1-2:before,
+.btn-1-2:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 80px solid #203e0c;
+}
+
+.btn-1-2:before {
+    right: -50px;
+    border-right: 50px solid transparent;
+    transform: translateX(-100%);
+}
+
+.btn-1-2:after {
+    left: -50% ;
+    border-left: 50px solid transparent;
+    transform: translateX(100%);
+}
+
+/* ?? ok ?? */
+.btn-1-2:hover:before,
+.btn-1-2:hover:after {
+    transform: translateX(0);
+}
