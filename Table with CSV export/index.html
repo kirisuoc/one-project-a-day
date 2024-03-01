@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/851b82981d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Table</title>
+    <!-- https://www.instagram.com/p/CwrWKPkrk8A/?img_index=2 -->
+</head>
+<body>
+    <div class="table-widget">
+        <table>
+            <caption>
+                Team Members
+                <span class="table-row-count"></span>
+                <button class="export-btn" type="button"><i class="fa-solid fa-file-export icon"></i>Export</button>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Email address</th>
+                    <th>Tags</th>
+                </tr>
+            </thead>
+            <tbody id="team-member-rows">
+                <!-- rows are generated -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <ul class="pagination">
+                            <!-- generated pages -->
+                        </ul>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="csv-feature.js"></script>
+</body>
+</html>
