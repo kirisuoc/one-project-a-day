@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/851b82981d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Hamburger menu icon (crazy)</title>
+    <!-- https://www.instagram.com/p/CuUNDaHPOoU/?img_index=2 -->
+</head>
+<body>
+    <div class="wrapper">
+        <button class="nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <script>
+        const nav = document.querySelector('.nav');
+
+        nav.addEventListener('click', (event) => {
+            nav.classList.toggle('open');
+        })
+    </script>
+</body>
+</html>
