@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Mulish:400,500,600,700&display=swap');
+
+:root {
+    --bg: #f8f8ff;
+    --nav-bg: #fff;
+    --primary: #040404;
+    --nav-item-color: #8f9a9e;
+    --nav-border: #8f9a9e;
+    --white: #fff;
+    --gap: 0.5rem;
+    --item-width: 5.25rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+    background: #777;
+    padding: 0.1rem;
+}
+
+.navigation {
+    max-width: fit-content;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: var(--nav-bg);
+    box-shadow: 0px 4px 16px 0px rgba(148, 156, 169, 0.15);
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 156, 169, 0.15);
+    user-select: none;
+}
+
+.cta-btn {
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    background: var(--primary);
+    border: 0;
+}
+
+.cta-btn>svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--white);
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    gap: var(--gap);
+    position: relative;
+}
+
+.nav-list>li {
+    width: var(--item-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cta-wrapper {
+    display: flex;
+    width: 0rem!important;
+    position: relative;
+    right: 50%;
+}
+
+.cta-btn {
+    position: absolute;
+    top: -2.5rem;
+}
+
+.active-bar {
+    position: absolute;
+    width: calc(25% - var(--gap));
+    height: 0.4rem;
+    background: var(--primary);
+    bottom: -32%;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-list>li:nth-child(1).active ~ .active-bar {
+    transform: translateX(calc(0));
+}
+.nav-list>li:nth-child(2).active ~ .active-bar {
+    transform: translateX(calc(var(--item-width) + var(--gap)));
+}
+.nav-list>li:nth-child(3).active ~ .active-bar {
+    transform: translateX(calc(var(--item-width)*2 + var(--gap)*2));
+}
+.nav-list>li:nth-child(4).active ~ .active-bar {
+    transform: translateX(calc(var(--item-width)*3 + var(--gap)*3));
+}
+
+.nav-list>li>a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    max-width: 4rem;
+    gap: 0.5rem;
+    width: 100%;
+    color: var(--nav-item-color);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-list>li>a>svg  {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: var(--nav-item-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-list>li:hover>a>svg {
+    fill: var(--primary);
+}
+
+.nav-list>li:hover>a {
+    color: var(--primary);
+}
+
+.nav-list>li.active>a {
+    color: var(--primary);
+}
+
+.nav-list>li.active>a>svg {
+    fill: var(--primary);
+}
