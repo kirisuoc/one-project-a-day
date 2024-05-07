@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+body {
+    font-family: system-ui;
+    background-color: #252525;
+    color: white;
+}
+
+.scroll-indicator {
+    height: 10px;
+    width: 100vw;
+    position: fixed;
+    top: 1rem;
+}
+
+.scroll-indicator .progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, #8e2de2, #4a00e0)
+}
+
+.container {
+    width: 80vw;
+    margin: 2rem auto;
+}
+
+section {
+    border-radius: 1rem;
+    border: none;
+    background: #444;
+    margin-bottom: 2rem;
+    padding: 2.5rem 3.5rem;
+}
+
+.container > section:nth-child(5n + 1) {
+    background-color: #7dffaf;
+    color: black;
+}
+
+.container > section:nth-child(5n + 2) {
+    background-color: #424242;
+}
+
+.container > section:nth-child(5n + 3) {
+    background-color: #f6f2f0;
+    color: black;
+}
+
+.container > section:nth-child(5n + 4) {
+    background-color: #ffcb70;
+    color: black;
+}
+
+.container > section:nth-child(5n + 5) {
+    background-color: #4158d0;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 3rem;
+}
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
