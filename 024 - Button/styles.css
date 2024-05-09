@@ -48,6 +48,7 @@ body {
   text-align: center;
   border: 2px solid #fff;
   border-radius: 2rem;
+
   transition: all .3s ease-in-out;
   cursor: pointer;
 
@@ -66,17 +67,8 @@ body {
   }
 }
 
-input:checked {
-  & ~ .button {
-  animation: button .5s ease both;
-  }
-}
-
-
 .circle {
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: 60px;
   height: 60px;
   z-index: 2;
@@ -91,11 +83,70 @@ input:checked {
   transform: rotate(-90deg);
 }
 
+input:checked {
+  & ~ .button {
+  animation: button .5s ease both, fill .5s ease-out 1.5s forwards;
+
+  img {
+    animation: check .5s ease-out 1.5s both;
+  }
+  }
+
+  & ~ .circle {
+    animation: circle 2s ease-out .5s both;
+  }
+}
+
+
 @keyframes button {
-  from {
+  0% {
     width: 260px;
+    border-color: #fff;
+    color: #fff;
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    width: 60px;
+    border-color: #45b078;
+    background: transparent;
+    color: transparent;
+  }
+}
+
+@keyframes check {
+  from {
+    opacity: 0;
   }
   to {
-    width: 60px;
+    opacity: 1;
+  }
+}
+
+@keyframes circle {
+  0% {
+    stroke-dashoffset: 183;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 183;
+    transform: rotate(-90deg) scale(1);
+    opacity: 1;
+  }
+  90%, 100% {
+    stroke-dasharray: 500 500;
+    transform: rotate(-90deg) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    background: transparent;
+    border-color: #fff;
+  }
+  to {
+    background: #fff;
   }
 }
