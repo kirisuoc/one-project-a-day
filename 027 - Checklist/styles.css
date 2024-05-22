@@ -1,0 +1,137 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 95vh;
+}
+
+li {
+  list-style: none;
+}
+  
+.frame {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.15);
+  overflow: hidden;
+  background: #c7d6e1;
+  color: #fff;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  background: #FDA231;
+  background: -webkit-linear-gradient(bottom left, #FDA231 0%, #FDCA31 100%);
+  background: -moz-linear-gradient(bottom left, #FDA231 0%, #FDCA31 100%);
+  background: -o-linear-gradient(bottom left, #FDA231 0%, #FDCA31 100%);
+  background: linear-gradient(to top right, #FDA231 0%, #FDCA31 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FDA231', endColorstr='#FDCA31',GradientType=1 );
+  color: #497081;
+  display: grid;
+  place-items: center;
+} 
+
+.list {
+  width: 240px;
+  height: 280px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.15);
+
+  .head {
+    padding-block: 20px;
+    margin-inline: 30px;
+    border-bottom: 1px solid #D4DCE0;
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 30px;
+      text-align: center;
+
+    }
+    
+    .subtitle {
+      font-size: 12px;
+      line-height: 18px;
+      text-align: center;
+    }
+  }
+
+}
+.list ul {
+  margin: 30px;
+
+  li {
+    position: relative;
+    display: block;
+    margin-block: 24px;
+    height: 14px;
+
+    .text {
+      font-size: 13px;
+      line-height: 14px;
+      cursor: pointer;
+      float: left;
+      transition: all .3s ease-in-out;
+    }
+
+    .button {
+      position: relative;
+      z-index: 2;
+      width: 14px;
+      height: 14px;
+      float: right;
+      border: 1px solid #497081;
+      border-radius: 50%;
+      box-sizing: content-box;
+      cursor: pointer;
+      transition: all .4s ease-out .5s;
+    
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 2px;
+      right: 0;
+      stroke: #c8d4d9;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-dasharray: 30 30;
+      stroke-dashoffset: 30;
+      transition: all .5s ease-out;
+      
+    }
+
+    input {
+      display: none;
+
+      &:checked ~ .text {
+        color: #c8d4d9;
+      }
+
+      &:checked ~ .button {
+        transform: scale(1.5);
+        opacity: 0;
+        transition: all .4s ease-in;
+      }
+
+      &:checked ~ .checkmark {
+        stroke-dashoffset: 0;
+        transition: all .5s ease-out .4s;
+      }
+    }
+  }
+
+}
+
+
+
+
