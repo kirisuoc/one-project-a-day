@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,100;1,300&display=swap');
+
+:root {
+    --white: #FFF;
+    --gray: #F3F3F3;
+    --background: #060D23;
+    --tab-background: #383D4F;
+    --gray-dark: #3e3e3e;
+    --gray-hover: #F7F7F7;
+    --primary-blue: #00E0FE;
+    --blue-gray: #BBCFD5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+body {
+    font-family: 'Red Hat Display', system-ui, -apple-system;
+    background: var(--gray);
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    color: var(--gray);
+}
+
+.container {
+    padding: 1.25rem;
+    margin: 0.625rem;
+    max-width: 23.75rem;
+    width: 100%;
+    min-height: 25rem;
+    border-radius: 1rem;
+    background: var(--background);
+    box-shadow: 0px 7px 29px 0px rgba(100,100,111,0.2);;
+}
+
+img {
+    display: inline;
+}
+
+.category {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--blue-gray);
+    font-size: 0.9rem;
+}
+
+header {
+    position: relative;
+}
+
+.tabs {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-dark);
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        border-radius: 0.4rem;
+        padding: 0.3rem 0.4rem;
+    }
+
+    a:hover {
+        color: var(--primary-blue);
+        background: var(--tab-background);
+    }
+}
+
+
+
+
+
+
+
+.movies,
+.books {
+    display: none;
+}
