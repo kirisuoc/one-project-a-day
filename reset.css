@@ -43,7 +43,6 @@ img {
 
 img, video, iframe, picture, figure {
     max-width: 100%;
-    display: block;
 }
 
 form, input, select, textarea, button, label {

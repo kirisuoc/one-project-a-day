@@ -1,0 +1,110 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+
+:root {
+  --speed: 2.5s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 95vh;
+}
+
+li {
+  list-style: none;
+}
+  
+.frame {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.15);
+  overflow: hidden;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  background: #5CA4EA;
+  display: grid;
+  place-items: center;
+} 
+
+.search {
+  position: relative;
+  height: 40px;
+  width: 260px;
+
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+
+}
+
+.searchfield {
+  height: 100%;
+  width: 220px;
+  height: 100%;
+  padding-inline: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: inherit;
+  color: #5CA4EA;
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.15);
+  border: none;
+  outline: 0;
+
+  &::placeholder {
+    color: rgba(0,0,0,0.3);
+  }
+}
+
+.button {
+  height: 100%;
+  width: 40px;
+  border: none;
+  background-color: inherit;
+  color: #5CA4EA;
+  cursor: pointer;
+
+  span {
+    font-size: 22px;
+  }
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  background: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 0 15px;
+  list-style: none;
+  color: #6e6e6e;
+  
+  &.active {
+    border-top: 1px solid #5ca4ea;
+  }
+
+  li {
+    margin: 18px 0;
+    padding: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: #5CA4EA;
+    }
+
+    b {
+      font-weight: bold;
+    }
+  }
+}
