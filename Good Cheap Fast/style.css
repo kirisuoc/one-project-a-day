@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100;1,300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+body {
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 5px;
+    width: 200px;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.label {
+    background-color: #d0d0d0;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 15px 0;
+    width: 80px;
+    height: 40px;
+    position: relative;
+}
+
+.toggle:checked + .label {
+    background-color: #8e44ad;
+}
+
+.ball {
+    width: 34px;
+    height: 34px;
+    background-color: #fff;
+    border-radius: 50px;
+    transform: translate3d(3px, 3px, 0);
+    transition: transform 0.3s ease;
+
+}
+
+.toggle:checked + .label > .ball {
+    transform: translate3d(43px, 3px, 0);
+}
