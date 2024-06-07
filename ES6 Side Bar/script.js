@@ -35,3 +35,17 @@ function toggleSidebar() {
 
     sidebar.classList.toggle('closed')
 }
+
+
+// Drag & Drop
+document.addEventListener('DOMContentLoaded', function() {
+    const dragAndDropItems = document.getElementById('cards');
+
+    new Sortable(dragAndDropItems, {
+        group: 'nested',
+        animation: 150,
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
+        handle: '.card' // Esto asegura que solo las tarjetas se puedan arrastrar
+    });
+});
