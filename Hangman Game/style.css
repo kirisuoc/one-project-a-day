@@ -167,6 +167,7 @@ h1 {
 /* RIGHT */
 .right {
   flex-basis: 60%;
+  max-width: 60%;
   padding: 40px;
   padding-bottom: 50px;
   padding-top: 60px;
@@ -186,6 +187,7 @@ h1 {
   gap: 6px;
   flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: nowrap;
 
 }
 
@@ -197,6 +199,7 @@ h1 {
   line-height: 18px;
   text-align: center;
   align-content: center;
+  transition: color 1s ease;
 }
 
 .word-container span.hidden {
