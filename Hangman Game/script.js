@@ -1,4 +1,6 @@
 let newWord
+let errors = 0
+let mistakes = []
 const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
                 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P',
                 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -22,6 +24,66 @@ function addAlphabetLetters() {
   })
 }
 
+  // Función para manejar el evento click en las letras del abecedario
+  function handleLetterClick(letter) {
+    const clickedLetter = letter.innerHTML.trim() // Obtiene el contenido del span sin espacios en blanco
+    letter.classList.add('selected')
+    let isCorrect = false
+
+    Array.from(wordToGuess.children).forEach(wordLetter => {
+      if(wordLetter.innerHTML.trim() === clickedLetter) {
+        wordLetter.style.color = 'black'
+        wordLetter.classList.remove('hidden')
+        // 
+        isCorrect = true
+      }
+    })
+
+    addErrors(isCorrect, clickedLetter)
+    addPartsToHangman(errors)
+
+
+  }
+
+  // Función para añadir errores
+  function addErrors(isCorrect, clickedLetter) {
+    if (!isCorrect && !mistakes.includes(clickedLetter)) {
+      addLetterToArray(clickedLetter, mistakes)
+      return errors++
+    }
+  }
+    // Función para añadir una letra al array solo si no está ya incluida
+    function addLetterToArray(letter, array) {
+      if(!array.includes(letter)) {
+        array.push(letter)
+      }
+    }
+
+  function addPartsToHangman(errors) {
+    switch (errors) {
+      case 1:
+        document.querySelector('.head').classList.remove('hidden');
+        break;
+      case 2:
+        document.querySelector('.body').classList.remove('hidden');
+        break;
+      case 3:
+        document.querySelector('.left-arm').classList.remove('hidden');
+        break;
+      case 4:
+        document.querySelector('.right-arm').classList.remove('hidden');
+        break;
+      case 5:
+        document.querySelector('.left-leg').classList.remove('hidden');
+        break;
+      case 6:
+        document.querySelector('.right-leg').classList.remove('hidden');
+        break;
+      default:
+        console.log('Has perdido');
+    }
+    
+  }
 
 // Función para obtener una palabra aleatoria y actualizar la pantalla
 function getRandomWordAndDisplay(data) {
@@ -36,43 +98,32 @@ function getRandomWordAndDisplay(data) {
   }
 }
 
-// Función para actualizar la palabra en el DOM
-function updateWord(letters) {
-  // Limpiar el contenido anterior
-  wordToGuess.innerHTML = ''
+  // Función para actualizar la palabra en el DOM
+  function updateWord(letters) {
+    // Limpiar el contenido anterior
+    wordToGuess.innerHTML = ''
 
-  // Crear y agregar los spans para cada letra
-  letters.forEach(letter => {
-    let newLetterEl = document.createElement('span')
-    newLetterEl.innerHTML = letter
-    newLetterEl.classList.add('hidden')
-    newLetterEl.style.color = 'transparent'
-    wordToGuess.appendChild(newLetterEl)
-});
-}
-// Función para actualizar la pista en el DOM
-function updateHint(hint) {
-  let newHint = `<p class="hint">
-                  <strong>Hint: </strong>
-                  ${hint}
-                </p>`
+    // Crear y agregar los spans para cada letra
+    letters.forEach(letter => {
+      let newLetterEl = document.createElement('span')
+      newLetterEl.innerHTML = letter
+      newLetterEl.classList.add('hidden')
+      newLetterEl.style.color = 'transparent'
+      wordToGuess.appendChild(newLetterEl)
+  });
+  }
 
-  // Inserta el newHint en el elemento hintContainer
-  hintContainer.insertAdjacentHTML('afterbegin', newHint)
-}
+  // Función para actualizar la pista en el DOM
+  function updateHint(hint) {
+    let newHint = `<p class="hint">
+                    <strong>Hint: </strong>
+                    ${hint}
+                  </p>`
 
-// Función para manejar el evento click en las letras del abecedario
-function handleLetterClick(letter) {
-  const clickedLetter = letter.innerHTML.trim() // Obtiene el contenido del span sin espacios en blanco
-  letter.classList.add('selected')
+    // Inserta el newHint en el elemento hintContainer
+    hintContainer.insertAdjacentHTML('afterbegin', newHint)
+  }
 
-  Array.from(wordToGuess.children).forEach(wordLetter => {
-    if(wordLetter.innerHTML.trim() === clickedLetter) {
-      wordLetter.style.color = 'black'
-      wordLetter.classList.remove('hidden')
-    }
-  })
-}
 
 
 
@@ -84,13 +135,6 @@ fetch('./words.json')
     getRandomWordAndDisplay(data)
   })
   .catch(error => console.log('Error: ', error))
-
-
-
-
-
-
-
 
 
 
