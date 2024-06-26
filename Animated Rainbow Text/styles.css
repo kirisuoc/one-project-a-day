@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter',sans-serif;
+    background-color: #1e293b;
+}
+
+#artext {
+    background: linear-gradient(
+        to left,
+        violet, indigo, 
+        blue, green, yellow,
+        orange, red
+    );
+    background-clip: text;
+    display: inline;
+    color: transparent;
+    animation: animated 5s linear infinite;
+}
+
+@keyframes animated {
+    to{background-position-x: 161px;}
+}
