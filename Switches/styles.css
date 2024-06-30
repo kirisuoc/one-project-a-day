@@ -9,10 +9,11 @@
 }
 
 body {
-    background-color: var(--background);
+    background-color: #222;
     display: grid;
     place-items: center;
     height: 100vh;
+    color: #ccc;
 }
 
 .grid {
@@ -198,4 +199,164 @@ body {
     fill: var(--sun);
     transition: 0.5s;
     opacity: 0;
+}
+
+
+.switch-5 input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+}
+
+.switch-5 .toggle {
+    position: relative;
+    display: block;
+    width: 2.4rem;
+    height: 0.9rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0,0,0);
+}
+
+.switch-5 .toggle:before {
+    content: '';
+    position: relative;
+    top: 6px;
+    left: 3px;
+    width: 2.4rem;
+    height: 0.9rem;
+    display: block;
+    background-color: #41393f;
+    border-radius: 20px;
+    transition: background 0.2s ease;
+}
+
+.switch-5 .toggle span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.3rem;
+    height: 1.3rem;
+    display: block;
+    background: #aeaaae;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.switch-5 .toggle span:before {
+    content: '';
+    position: absolute;
+    display: block;
+    margin: -8px;
+    width: 56px;
+    height: 56px;
+    background: #8f44fd;
+    border-radius: 50%;
+    transform: scale(0);
+    opacity: 1;
+    pointer-events: none;
+}
+
+.switch-5 #cbx:checked + .toggle:before {
+    background: rgba(143, 68, 253, 0.4);
+}
+
+.switch-5 #cbx:checked + .toggle span {
+    background: #8f44fd;
+    transform: translateX(1.3rem);
+    transition: all 0.3s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
+    box-shadow: 0 3px 8px rgba(143, 68, 253, 0.3);
+}
+
+.switch-5 #cbx:checked + .toggle span:before {
+    transform: scale(1.2);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+
+.switch-4 {
+    display: inline-block;
+    scale: 0.7;
+}
+
+.switch-4 input {
+    display: none;
+}
+
+.switch-4 label {
+    display: block;
+    width: 3rem;
+    height: 1.4rem;
+    padding: 2.5px;
+    border-radius: 30px;
+    border: 2px solid #4d4b4e;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.switch-4 label::after {
+    content: '';
+    display: inherit;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 20px;
+    background-color: #4d4b4e;
+    transition: 0.3s
+}
+
+.switch-4 input:checked ~ label {
+    border-color: #8f44fd;
+}
+
+.switch-4 input:checked ~ label::after {
+    translate: 1.6rem 0;
+    background-color: #8f44fd;
+}
+
+.switch-4 input:disabled ~ label {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+#checkboxInput {
+    display: none;
+}
+
+.toggleSwitch {
+    scale: 0.55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 4rem;
+    height: 1.4rem;
+    background-color: rgba(82, 82, 82);
+    border-radius: 30px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.toggleSwitch::after {
+    content: '';
+    position: absolute;
+    height: 1.8rem;
+    width: 1.8rem;
+    left: 0px;
+    background-color: #141315;
+    border-radius: 50%;
+    transition-duration: 0.3s;
+    border: 4px solid #4d4b4e;
+}
+
+#checkboxInput:checked + .toggleSwitch::after {
+    transform: translateX(100%);
+    transition-duration: 0.3s;
+    border: 4px solid #8f44fd;
+}
+
+/* Switch background change */
+#checkboxInput:checked + .toggleSwitch {
+    background-color: #8f44fd;
+    transition-duration: 0.3s;
 }
